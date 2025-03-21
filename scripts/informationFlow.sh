@@ -35,7 +35,7 @@ dataset=datasets/GQA_val_correct_question_with_choose_ChooseAttr.csv
 #dataset=datasets/GQA_val_correct_question_with_relChooser_ChooseRel.csv
 #dataset=datasets/GQA_val_correct_question_with_categoryThatThisChoose_objThisChoose_ChooseCat.csv
 
-imagefold=/gpfs/work5/0/prjs0370/zhizhang/projects/Dissection/datasets/gqa/images/
+imagefolder=../datasets/gqa/images/
 
 
 
@@ -59,7 +59,7 @@ echo "Using dataset: $dataset_name"
 source activate llava
 python InformationFlow.py \
         --model-path $model_path \
-        --image-folder $imagefold \
+        --image-folder $imagefolder \
         --temperature 0 \
         --conv-mode $convmode \
         --refined_dataset $dataset \

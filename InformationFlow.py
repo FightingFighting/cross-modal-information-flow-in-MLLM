@@ -384,8 +384,7 @@ def InforFlowAna(args):
     results = []
     index=0
     for (input_ids, image_tensor, original_image_sizes, prompts, mask_tensor), line in tqdm(zip(data_loader, questions), total=len(questions)):
-        if index==20:
-            break
+
         question_id = line["q_id"]
         img_id= str(line["img_id"]) + ".jpg"
 
