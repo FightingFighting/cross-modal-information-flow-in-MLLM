@@ -13,8 +13,66 @@ After installing llava environment, you will find an LLaVA-NeXT folder in cross-
 Our dataset is collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/index.html). The reformated datasets are in `datasets`.
 
 # Use
+## Information flow
+1. Open `scripts/informationFlow.sh`
+2. Setting:
+   
+   `current_window`: how many layers you want to block for the attention knock at a time;
+   
+   `current_block_desc`: which kind of information flow you want to block;
+   
+   `model_path`: which kind of model you want to explore;
+   
+   `convmode`: different kind of model has different convmode;
+   
+   `dataset`: which kind of task you want to explore;
+   
+   `imagefolder`: the image folder
+   
+4. Run `sbatch scripts/informationFlow.sh`
 
+**current_block_desc** can be chosen from:
+```
+  "Question->Last"
+  "Image->Last"
+  "Image->Question"
+  "Last->Last"
+  "Image Central Object->Question"
+  "Image Without Central Object->Question"
+  "Question->Last"
+```
 
+**model_path** and **convmode** can be chosen from:
+```
+  model_path="liuhaotian/llava-v1.6-vicuna-7b" convmode="vicuna_v1"
+  model_path="lmms-lab/llama3-llava-next-8b"  convmode="llava_llama_3"
+  model_path="liuhaotian/llava-v1.5-7b"   convmode="vicuna_v1"
+  model_path="liuhaotian/llava-v1.5-13b"   convmode="vicuna_v1"
+```
+
+**dataset** can be chosen from:
+```
+  datasets/GQA_val_correct_question_with_choose_ChooseAttr.csv
+  datasets/GQA_val_correct_question_with_positionQuery_QueryAttr.csv
+  datasets/GQA_val_correct_question_with_existThatOr_LogicalObj.csv
+  datasets/GQA_val_correct_question_with_twoCommon_CompareAttr.csv
+  datasets/GQA_val_correct_question_with_relChooser_ChooseRel.csv
+  datasets/GQA_val_correct_question_with_categoryThatThisChoose_objThisChoose_ChooseCat.csv
+```
+
+## Probability of answer word tracking
+1. Open `scripts/last_position_answer_prob.sh`
+2. Setting:
+   
+   `model_path`: which kind of model you want to explore;
+   
+   `convmode`: different kind of model has different convmode;
+   
+   `dataset`: which kind of task you want to explore;
+   
+   `imagefolder`: the image folder
+   
+4. Run `sbatch scripts/last_position_answer_prob.sh`
 
 ## Cite
 If this project is helpful for you, please cite our paper:
@@ -30,4 +88,5 @@ If this project is helpful for you, please cite our paper:
 
 ## Acknowledgement
 The code is built upon https://github.com/google-research/google-research/tree/master/dissecting_factual_predictions and [LLaVA](https://github.com/LLaVA-VL/LLaVA-NeXT).
-Our used datasets are collect from [GQA](https://cs.stanford.edu/people/dorarad/gqa/index.html)
+
+Our used datasets are collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/index.html)
