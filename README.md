@@ -39,7 +39,6 @@ Our dataset is collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/i
   "Last->Last"
   "Image Central Object->Question"
   "Image Without Central Object->Question"
-  "Question->Last"
 ```
 
 **model_path** and **convmode** can be chosen from:
@@ -73,6 +72,11 @@ Our dataset is collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/i
    `imagefolder`: the image folder
    
 4. Run `sbatch scripts/last_position_answer_prob.sh`
+
+# Visulization
+if you want to merge several lines into one figure, you can run `python vil/merge_lineplot.py`.
+
+For example, you might already get the results of the information flow: `Question->Last`,`Image->Last`,`Last->Last`, and you want to merge these three lines in one Figure, and then you could run `python vil/merge_lineplot.py`.
 
 ## Cite
 If this project is helpful for you, please cite our paper:
