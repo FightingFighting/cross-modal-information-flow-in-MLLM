@@ -227,22 +227,30 @@ def merge(model_name, operation_path, window):
 
 
 # #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# ####### llava_v1_5_13b #######
+model_name="llava_v1_5_13b"
+operation_path="output/"
+window=9
+merge(model_name,operation_path,window)
+
+# ####### llava_v1_5_7b #######
+model_name="llava_v1_5_7b"
+operation_path="output/"
+window=7
+merge(model_name,operation_path,window)
+
+
 # ####### llama3_llava_next_8b #######
 model_name="llama3_llava_next_8b"
 operation_path="output/"
-window=9
+window=7
 merge(model_name,operation_path,window)
 
 
 # ####### llava_v1_6_vicuna_7b #######
 model_name="llava_v1_6_vicuna_7b"
 operation_path="output/"
-window=9
+window=7
 merge(model_name,operation_path,window)
 
 
-# ####### llava_v1_5_13b #######
-model_name="llava_v1_5_13b"
-operation_path="output/"
-window=9
-merge(model_name,operation_path,window)
