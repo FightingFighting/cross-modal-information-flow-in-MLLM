@@ -10,7 +10,8 @@ This is the official repository for the paper: [Cross-modal Information Flow in 
 After installing llava environment, you will find an LLaVA-NeXT folder in cross-modal-information-flow-in-MLLM
 
 # Dataset
-Our dataset is collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/index.html). The reformated datasets are in `datasets`.
+Our dataset is collected from [GQA](https://cs.stanford.edu/people/dorarad/gqa/index.html). The collected datasets are in `datasets`. 
+For the images, please download from [here](https://downloads.cs.stanford.edu/nlp/data/gqa/images.zip).
 
 # Use
 ## Information flow
