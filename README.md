@@ -1,5 +1,5 @@
 # Cross-modal Information Flow in Multimodal Large Language Model
-This is the official repository for the paper: [Cross-modal Information Flow in Multimodal Large Language Models](https://arxiv.org/abs/2411.18620)
+This is the official repository for our CVPR paper: [Cross-modal Information Flow in Multimodal Large Language Models](https://arxiv.org/abs/2411.18620)
 
 # Installation
 ```
